@@ -71,7 +71,7 @@ const UserProfileSearch = () => {
         <div style={{ marginTop: '20px' }}>
           <h2>User Information</h2>
           <p>Name: {user.name}</p>
-          <p>Age: {user.age}</p>
+          <p>Password: {user.password}</p>
           <p>Email: {user.email}</p>
         </div>
       )}

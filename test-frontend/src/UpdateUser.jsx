@@ -7,7 +7,7 @@ function UpdateUser() {
     const{id} = useParams()
     const [name, setName] = useState()
     const [email, setEmail] = useState()
-    const [age, setAge] = useState()
+    const [password, setPassword] = useState()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -15,14 +15,14 @@ function UpdateUser() {
         .then(result => {console.log(result)
             setName(result.data.name)
             setEmail(result.data.email)
-            setAge(result.data.age)
+            setPassword(result.data.password)
         })
         .catch(err => console.log(err))
     },[])
 
     const Update =(e) => {
         e.preventDefault();
-        axios.put("http://localhost:8080/updateUser/"+id, {name,email,age})
+        axios.put("http://localhost:8080/updateUser/"+id, {name,email,password})
         .then(result => {
             console.log(result)
             navigate('/display')
@@ -56,12 +56,12 @@ function UpdateUser() {
                 />
               </div>
               <div style={{ marginBottom: '15px' }}>
-                <label style={{ display: 'block', marginBottom: '5px' }}>Age</label>
+                <label style={{ display: 'block', marginBottom: '5px' }}>Password</label>
                 <input
                   type="text"
-                  placeholder="Enter Age"
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ddd' }}
                 />
               </div>
