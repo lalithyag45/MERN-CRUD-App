@@ -9,7 +9,7 @@ const UserProfileSearch = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    axios.get(`http://localhost:3001/getUserByName/${searchedName}`)
+    axios.get(`http://localhost:8080/getUserByName/${searchedName}`)
     .then(response => {
       // Handle the response
       console.log(response);
@@ -50,29 +50,36 @@ const UserProfileSearch = () => {
   };
 
   return (
-    <div>
-      <label>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' ,maxWidth: '400px',margin: 'auto'}}>
+      <label style={{ display: 'block', marginBottom: '10px' }}>
         Enter Name:
         <input
           type="text"
           value={searchedName}
           onChange={(e) => setSearchedName(e.target.value)}
+          style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ddd' }}
         />
       </label>
-      <button onClick={handleSearch}>Search</button>
-
+      <button
+        onClick={handleSearch}
+        style={{ backgroundColor: '#4CAF50', color: 'white', padding: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+      >
+        Search
+      </button>
+  
       {user && (
-        <div>
+        <div style={{ marginTop: '20px' }}>
           <h2>User Information</h2>
           <p>Name: {user.name}</p>
           <p>Age: {user.age}</p>
           <p>Email: {user.email}</p>
         </div>
       )}
-
-      {error && <h2><p>{error}</p></h2>}
+  
+      {error && <h2><p style={{ color: 'red' }}>{error}</p></h2>}
     </div>
   );
+  
 };
 
 export default UserProfileSearch;

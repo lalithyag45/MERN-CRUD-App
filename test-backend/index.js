@@ -1,22 +1,45 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors =require('cors')
-const UserModel = require('./models/Users')
+const {UserModel,AuthModel} = require('./models/Users')
+
 
 const app =express()
 app.use(cors()) // to bind frontend to server
 app.use(express.json()) // To pass the data form front end to server in .json format
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/crud") //to connect to mongo database
+mongoose.connect("mongodb://127.0.0.1:27017/crud",
+{ 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+});  //to connect to mongo database
 
 //Display records on Frontend 
+app.post('/register',(req,res)=>{
+    AuthModel.create(req.body)
+    .then(users=>res.json(users))
+    .catch(err=>res.json(err))
+})
+app.get('/:name',(req,res)=>{
+    const name = req.params.name;
+    AuthModel.findOne({name:name})
+    .then(user =>{
+        if(user){
+            res.json(user) 
+        }
+        else{
+            res.json({})
+        }
+    })
+    .catch(err=>res.json(err))
+})
+
 app.get('/',(req,res)=>{
     UserModel.find({})
     .then(users=>res.json(users))
     .catch(err=>res.json(err))
 })
-
 app.get('/getUser/:id',(req,res)=>{
     const id =req.params.id;
     UserModel.findById({_id:id})
@@ -55,6 +78,6 @@ app.post("/createUser", (req,res) => {
     .catch(err => res.json(err))
 })
 
-app.listen(3001,() => {  // to call the server
+app.listen(8080,() => {  // to call the server
     console.log("Server is Running")
 })

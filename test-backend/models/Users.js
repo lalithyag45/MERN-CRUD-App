@@ -6,5 +6,13 @@ const UserSchema = new mongoose.Schema({
     age: Number
 })
 
+const AuthSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+   password: String
+})
+
 const UserModel = mongoose.model("users",UserSchema)
-module.exports = UserModel
+const AuthModel = mongoose.model("auth",AuthSchema)
+
+module.exports =  {UserModel, AuthModel}
