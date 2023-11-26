@@ -49,6 +49,7 @@ function Users() {
                 }
             </tbody>
         </table>
+        <Link to="/search" > Search</Link>
       </div>
     </div>
   )
