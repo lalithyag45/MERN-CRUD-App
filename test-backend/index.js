@@ -24,6 +24,13 @@ app.get('/getUser/:id',(req,res)=>{
     .catch(err=>res.json(err))
 })
 
+app.get('/getUserByName/:name', (req, res) => {
+    const name = req.params.name;
+    UserModel.findOne({ name: name })
+      .then(user => res.json(user))
+      .catch(err => res.json(err));
+  });
+
 app.put('/updateUser/:id', (req,res) => {
     const id =req.params.id;
     UserModel.findByIdAndUpdate({_id:id},{
