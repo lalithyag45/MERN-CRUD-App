@@ -40,7 +40,7 @@ function Users() {
             </thead>
             <tbody>
               {
-                users.map((user,index) => (
+                users.map((user) => (
                   <tr key={user._id}>
                     <td style={{ padding: '10px', border: '1px solid #ddd' }}>{user.name}</td>
                     <td style={{ padding: '10px', border: '1px solid #ddd' }}>{user.email}</td>

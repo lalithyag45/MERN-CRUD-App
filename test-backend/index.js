@@ -20,7 +20,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/crud",
 app.post('/register',(req,res)=>{
     AuthModel.create(req.body)
     .then(users=>res.json(users))
-    .catch(err=>res.json(err))
+    .catch(err=>{
+        if(err.code===11000)
+        res.status(400).send({message:"duplicate"})
+        else
+        res.status(500).send({message:"Internal server error"})})
 })
 //Get all the users from database
 app.get('/',(req,res)=>{
@@ -33,6 +37,7 @@ app.get('/',(req,res)=>{
         console.log(err)
         res.json(err)})
 })
+
 //Authenticate the user
 app.get('/:name',(req,res)=>{
     const name = req.params.name;
