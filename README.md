@@ -3,7 +3,7 @@ Implemented a robust database system to store user details, allowing for efficie
 <br>KEY FEATURES:<br>
 <ul>
   <li>User registration with password verification.<li>
-  <ul>Secure storage of user data in a database.</ul>
-  <ul>User authentication and login functionality.</ul>
-  <ul>CRUD operations for user management.</ul>
+  <li>Secure storage of user data in a database.</li>
+  <li>User authentication and login functionality.</li>
+  <li>CRUD operations for user management.</li>
 </ul>
