@@ -17,5 +17,5 @@ Steps to run code:
      <ul>npm run serve</ul>
 
 3) cd exam-frontend
-     <li>npm i</li>
-     <li>npm start</li>
+     <ul>npm i</ul>
+     <ul>npm start</ul>
