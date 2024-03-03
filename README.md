@@ -12,10 +12,10 @@ Implemented a robust database system to store user details, allowing for efficie
 Steps to run code:
 
 1) Connect to database (services->mongodb-running)
-2) cd exam-backend
+2) cd test-backend
      <ul>npm i</ul>
      <ul>npm run serve</ul>
 
-3) cd exam-frontend
+3) cd test-frontend
      <ul>npm i</ul>
      <ul>npm start</ul>
