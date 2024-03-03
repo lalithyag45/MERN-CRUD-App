@@ -8,3 +8,16 @@ Implemented a robust database system to store user details, allowing for efficie
   <li>User authentication and login functionality.</li>
   <li>CRUD operations for user management.</li>
 </ul>
+<br>
+Steps to run code:
+
+Steps to run MERN Project:
+
+1) Connect to database
+2) cd exam-backend
+     npm i
+     npm run serve
+
+3) cd exam-frontend
+     npm i
+     npm start
