@@ -11,13 +11,11 @@ Implemented a robust database system to store user details, allowing for efficie
 <br>
 Steps to run code:
 
-Steps to run MERN Project:
-
-1) Connect to database
+1) Connect to database (services->mongodb-running)
 2) cd exam-backend
-     npm i
-     npm run serve
+     <li>npm i</li>
+     <li>npm run serve</li>
 
 3) cd exam-frontend
-     npm i
-     npm start
+     <li>npm i</li>
+     <li>npm start</li>
