@@ -13,8 +13,8 @@ Steps to run code:
 
 1) Connect to database (services->mongodb-running)
 2) cd exam-backend
-     <li>npm i</li>
-     <li>npm run serve</li>
+     <ul>npm i</ul>
+     <ul>npm run serve</ul>
 
 3) cd exam-frontend
      <li>npm i</li>
